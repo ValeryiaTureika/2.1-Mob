@@ -69,23 +69,6 @@ public class MainActivityTest {
                                 withParent(withId(R.id.view_pager)))),
                         isDisplayed()));
         textView2.check(matches(withText("Page: 2")));
-
-        ViewInteraction tabView2 = onView(
-                allOf(withContentDescription("Tab 1"),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(R.id.tabs),
-                                        0),
-                                0),
-                        isDisplayed()));
-        tabView2.perform(click());
-
-        ViewInteraction textView3 = onView(
-                allOf(withId(R.id.section_label), withText("Page: 1"),
-                        withParent(allOf(withId(R.id.constraintLayout),
-                                withParent(withId(R.id.view_pager)))),
-                        isDisplayed()));
-        textView3.check(matches(withText("Page: 1")));
     }
 
     private static Matcher<View> childAtPosition(
